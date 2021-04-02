@@ -1,0 +1,395 @@
+/*Tipografías*/
+@font-face {
+	font-family: sans;
+	src: url("../assets/fuentes/OpenSans-Bold.ttf");
+}
+
+@font-face {
+	font-family: sans-regular;
+	src: url("../assets/fuentes/OpenSans-Regular.ttf");
+}
+
+
+/*Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*{
+	box-sizing: border-box;
+}
+/*Fin Reset CSS*/
+
+/*	----- Variables ----- */
+:root{
+/*	----Colores----- */
+	--rojo: #d03b40;
+	--beige: #ded6c0;
+	--blanco: #f5f0ed;
+	--cafe: #241d1b;
+	--negro: #3c3c3b;
+/*	---- Fuentes ----- */
+	--titulo1: 44px;40
+	--titulo2: 28px;26
+	--titulo3: 24px;22
+	--cuerpo: 16px;14
+	--boton: 14px;
+	--espaciado: 1.5;
+/*	---- Fondos ----- */
+	--fondo1: url("../assets/imagenes/Fondo1.jpg");
+	--fondo2: url("../assets/imagenes/Fondo2.jpg");
+}
+
+/*Estilos Generales*/
+h1{
+	font-size: var(--titulo1);
+	color: var(--blanco);
+	line-height: var(--espaciado);
+	text-transform: uppercase;
+	font-family: sans;
+}
+h2{
+	font-size: var(--titulo2);
+	color: var(--blanco);
+	line-height: var(--espaciado);
+	text-transform: uppercase;
+	font-family: sans;
+}
+h3{
+	font-size: var(--titulo3);
+	color: var(--negro);
+	line-height: var(--espaciado);
+	text-transform: uppercase;
+	font-family: sans;
+}
+
+a{
+	color: var(--blanco);
+	font-family: sans;
+	text-transform: uppercase;
+	font-size: var(--boton);
+	text-decoration: none;
+}
+
+p{
+	font-size: var(--cuerpo);
+	color: var(--blanco);
+	line-height: var(--espaciado);
+	font-family: sans-regular;
+}
+
+hr{
+	color: var(--blanco);
+	width: 30%;
+}
+/* Fin estilos Generales*/
+
+
+/*Estilos Específicos*/
+header{
+	position: fixed;
+	display: flex;
+	width: 100%;
+	place-content: flex-end space-between;
+	align-items: flex-end;
+	padding: 20px;
+}
+
+header:hover{
+	background-color: var(--cafe);
+}
+
+.menu{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	align-items: flex-end;
+	min-height: 42px;
+}
+
+.menu ul{
+	display: flex;
+	flex-flow: row wrap;
+}
+.menu ul li{
+	padding: 0 10px;
+}
+.menu ul li a:hover{
+	color: var(--rojo);
+}
+
+.logo-menu{
+	height: 45px;
+	width: 45px;
+	background-image: url("../assets/imagenes/logo-menu.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: var(--rojo);
+	display: none;
+}
+
+
+/*--- Pantallas Principales ---*/
+.Principal{
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+#cajaPrimaria{
+	background-image: var(--fondo1);
+}
+#cajaSecundaria{
+	background-image: var(--fondo2);
+}
+#cajaSecundaria h2{
+	font-size: var(--titulo1);
+}
+#cajaSecundaria span{
+	margin: auto;
+	margin-top: 20px;
+	width: 30vw;
+	padding: 20px;
+	display: block;
+	border: solid 1px var(--blanco);
+}
+#cajaSecundaria span a{
+	line-height: 1.3;
+}
+
+.Principal .overlay{
+	width: 50%;
+}
+
+
+/*---- Seccion Banner ----*/
+.banner{
+	display: flex;
+	flex-flow: row wrap;
+	height: 50vh;
+	width: 100%;
+}
+.banner .caja1, .banner .caja2{
+	height: 100%;
+	width: 50%;
+	text-align: center;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+.caja1{
+	background-color: var(--rojo);
+}
+.caja2{
+	background-color: var(--beige);
+}
+.caja2 p, .caja2 h2 {
+		color: var(--rojo);
+}
+.caja1 .overlay, .caja2 .overlay{
+	width: 90%
+}
+
+/*---- Seccion Productos ----*/
+.productos{
+	background-color: var(--blanco);
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 20px;
+}
+.productos .elemento{
+	height: 50vh;
+	width: 50%;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.productos .elemento section{
+	width: 70%;
+	margin-left: 10px;
+	text-align: justify;
+}
+.productos .elemento section h3{
+	text-align: center;
+}
+.productos .elemento p{
+	color: var(--negro);
+}
+
+/*---- Seccion Footer ----*/
+footer{
+	font-family: sans-regular;
+	color: var(--blanco);
+	font-size: var(--cuerpo);
+	padding: 20px;
+	background-color: var(--cafe);
+}
+
+/* Fin estilos Específicos*/
+
+
+/* ------------------ MOVIL DESIGN ------------------------- */
+/*----------------   MEDIA QUIERIES --------------------------*/
+
+@media screen and (max-width:1000px) {
+	.productos{
+		height: auto;
+		flex-flow: column;
+	}
+	.productos .elemento{
+		width: 100%;
+		flex-flow: row wrap;
+		height: auto;
+		padding: 10px;
+		margin: 20px auto;
+		display: flex;
+		justify-content: space-around;
+		align-content: center;
+		align-items: center;
+	}
+	.productos .elemento img{
+		margin-bottom: 15px;
+	}
+	.productos .elemento section{
+		width: 100%;
+		margin-left: 10px;
+		text-align: justify;
+	}
+}
+
+@media screen and (max-width:800px) {
+	.banner{
+		height: 100vh;
+		width: 100%;
+	}
+	.banner .caja1, .banner .caja2{
+		height: 50%;
+		width: 100%;
+		text-align: center;
+		display: flex;
+	}
+	.Principal .overlay{
+		width: 90%;
+	}
+
+
+header{
+	padding-right: 0;
+}
+
+.logo-menu{
+	display: block;
+	margin-right: 20px;
+}
+
+.menu{
+	max-width: 0;
+	align-self: flex-end;
+	justify-content: center;
+	overflow: hidden;
+	transition: max-width .5s;
+	position: absolute;
+	top: 70px;
+	right: 0px;
+	background-color: var(--cafe);
+
+}
+.menu ul{
+	margin: 10px 30px;
+}
+
+header img{
+	align-self: flex-start;
+}
+
+.menu ul{
+	display: flex;
+	flex-flow: column wrap;
+	row-gap:10px;
+}
+
+.menu.menu-desplegado{
+ max-width: 200px;
+}
+
+}
+
+@media screen and (max-width:400px) {
+
+	:root{
+		--titulo1: 38px;
+		--titulo2: 26px;
+		--titulo3: 22px;
+		--cuerpo: 14px;
+	}
+
+	.Principal .overlay{
+		height: auto;
+		margin: auto;
+	}
+	#cajaSecundaria span{
+		width: 80vw;
+	}
+
+
+	nav{
+		align-items: flex-start;
+	}
+
+	.productos{
+		min-height: auto;
+	}
+	.productos .elemento{
+		height: auto;
+	}
+}
